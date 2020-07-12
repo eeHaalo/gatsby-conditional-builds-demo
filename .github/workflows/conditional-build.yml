@@ -54,6 +54,7 @@ jobs:
     
     # Push changes to master branch
     - name: Push site build
+      if: github.event_name == 'push' && github.repository == 'Amorpheuz/gatsby-conditional-builds-demo'
       run: |
         cd public
         git config --global user.email "connect@amorpheuz.dev"
